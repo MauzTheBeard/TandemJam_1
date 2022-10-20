@@ -8,7 +8,7 @@ public class DoorTriggerArea : MonoBehaviour
 
     private void Start()
     {
-        gameObjectId = GetComponentInParent<DoorController>().GameObjectId;
+        //gameObjectId = GetComponentInParent<DoorController>().GameObjectId;
     }
 
     private void OnTriggerEnter(Collider other)
