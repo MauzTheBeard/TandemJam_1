@@ -479,7 +479,12 @@ MonoBehaviour:
   UISoundsObject: {fileID: 1202495835}
   AmbientSoundsObject: {fileID: 25676648}
   EventSoundsObject: {fileID: 1902061215}
-  UISounds: []
+  UISounds:
+  - Name: StartGame
+    Clip: {fileID: 8300000, guid: 9774bf531f019304392ab970cad8b9e9, type: 3}
+    Volume: 1
+    Pitch: 1
+    Source: {fileID: 0}
   AmbientSounds: []
   EventSounds: []
   FootStepSounds: []

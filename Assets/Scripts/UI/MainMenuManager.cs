@@ -7,6 +7,7 @@ public class MainMenuManager : MonoBehaviour
 {
     public void StartGame()
     {
-        //SceneManager.LoadScene();
+        AudioManager.Instance.PlayUISound("StartGame");
+        SceneManager.LoadScene("MauzScene");
     }
 }
