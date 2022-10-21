@@ -16,7 +16,14 @@ public class DoorController : MonoBehaviour
     private bool isOpen = false;
     private float closeTime = 4.0f;
     private float closeTimeElapsed = 0.0f;
-        
+
+    private DoorAudioController audioController = null;
+
+    private void Start()
+    {
+        audioController = GetComponent<DoorAudioController>();
+    }
+
     private void Update()
     {
         if (isOpen)
@@ -33,6 +40,7 @@ public class DoorController : MonoBehaviour
 
     public void Open(int direction)
     {
+        audioController.PlayOpenSound();
         LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();
         isOpen = true;
     }
@@ -40,6 +48,7 @@ public class DoorController : MonoBehaviour
     private void Close()
     {
         LeanTween.rotateY(doorModel, closedPosition, transitionTime).setEaseInOutQuad();
+        audioController.PlayCloseSound();
         isOpen = false;
     }
 }
