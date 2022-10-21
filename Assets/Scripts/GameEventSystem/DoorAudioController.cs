@@ -7,8 +7,6 @@ public class DoorAudioController : MonoBehaviour
     [SerializeField]
     private List<AudioClip> doorOpenClips = null;
     [SerializeField]
-    private List<AudioClip> doorCreakClips = null;
-    [SerializeField]
     private List<AudioClip> doorCloseClips = null;
 
     private AudioSource audioSource = null;
@@ -21,14 +19,7 @@ public class DoorAudioController : MonoBehaviour
     public void PlayOpenSound()
     {
         audioSource.clip = doorOpenClips[0];
-        audioSource.Play();
-        //PlayCreackSound();
-    }
-
-    private void PlayCreackSound()
-    {
-        audioSource.clip = doorCreakClips[0];
-        audioSource.Play();
+        audioSource.Play();        
     }
 
     public void PlayCloseSound()
