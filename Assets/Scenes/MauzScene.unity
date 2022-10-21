@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 2161.8408, g: 2265.793, b: 3288.9844, a: 1}
+  m_IndirectSpecularColor: {r: 2160.3896, g: 2264.5684, b: 3288.1172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,38 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &49075165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 49075166}
+  m_Layer: 6
+  m_Name: DoorObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &49075166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 49075165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1078357139}
+  m_Father: {fileID: 1054679443}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &146365794
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,7 +770,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658362811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.83, y: 0, z: 0}
+  m_LocalPosition: {x: -11.13, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -758,8 +790,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1054679443}
   - component: {fileID: 1054679444}
+  - component: {fileID: 1054679445}
   m_Layer: 6
-  m_Name: Door
+  m_Name: Door_ONE
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -777,7 +810,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1078357139}
+  - {fileID: 49075166}
   m_Father: {fileID: 658362812}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -793,9 +826,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef70aa0b6d0243b4cb0eb4310c921d0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  doorModel: {fileID: 49075165}
   openPosition: 90
   closedPosition: 0
   transitionTime: 1
+--- !u!65 &1054679445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054679442}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4, z: 4}
+  m_Center: {x: 0, y: 2.02, z: -2}
 --- !u!1 &1078357138
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +855,7 @@ GameObject:
   - component: {fileID: 1078357142}
   - component: {fileID: 1078357141}
   - component: {fileID: 1078357140}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: DoorModel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -827,7 +874,7 @@ Transform:
   m_LocalScale: {x: 1, y: 4.031, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1054679443}
+  m_Father: {fileID: 49075166}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1078357140

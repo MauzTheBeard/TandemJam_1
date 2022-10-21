@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorController : MonoBehaviour
-{        
+{
+    [SerializeField]
+    private GameObject doorModel;
     [SerializeField]
     private float openPosition = 0.0f;
     [SerializeField]
@@ -31,13 +33,13 @@ public class DoorController : MonoBehaviour
 
     public void Open(int direction)
     {
-        LeanTween.rotateY(gameObject, openPosition * direction, transitionTime).setEaseInOutQuad();
+        LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();
         isOpen = true;
     }
 
     private void Close()
     {
-        LeanTween.rotateY(gameObject, closedPosition, transitionTime).setEaseInOutQuad();
+        LeanTween.rotateY(doorModel, closedPosition, transitionTime).setEaseInOutQuad();
         isOpen = false;
     }
 }

@@ -17,39 +17,55 @@ public class ActionCaster : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isInDoorRange && currentDoorController != null)
         {
-            currentDoorController.Open(doorOpenDirection);
+            currentDoorController.Open(doorOpenDirection);            
         }
     }
 
     void FixedUpdate()
+    {
+        CheckDoorPriximity();
+    }
+
+    private void CheckDoorPriximity()
     {
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
         if (Physics.Raycast(ray, out hit, 3.0f, layerMask))
         {
-            Vector3 forward = hit.transform.TransformDirection(Vector3.forward);
-            Vector3 toOther = transform.position - hit.transform.position;            
-            float DotResult = Vector3.Dot(toOther, forward);
             currentDoorController = hit.collider.gameObject.GetComponentInParent<DoorController>();
 
-            if (DotResult > 0)
+            if (GetDirectionToOpen(hit) > 0)
             {
-                Debug.Log("Right");
-                doorOpenDirection = -1;
+                //Debug.Log("Right");
+                doorOpenDirection = 1;
             }
             else
             {
-                Debug.Log("Left");
-                doorOpenDirection = 1;
-            }            
+                //Debug.Log("Left");
+                doorOpenDirection = -1;
+            }
 
-            
             isInDoorRange = true;
         }
         else
         {
-            isInDoorRange = false;
+            Reset();
         }
+    }
+
+    private float GetDirectionToOpen(RaycastHit hit)
+    {
+        Vector3 forward = hit.transform.TransformDirection(Vector3.right);
+        Vector3 toOther = transform.position - hit.transform.position;
+        float DotResult = Vector3.Dot(toOther, forward);
+        return DotResult;
+    }
+
+    private void Reset()
+    {
+        currentDoorController = null;
+        doorOpenDirection = 0;
+        isInDoorRange = false;
     }
 }
