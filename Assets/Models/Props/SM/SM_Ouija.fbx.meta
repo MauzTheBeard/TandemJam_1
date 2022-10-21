@@ -8,8 +8,7 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: M_Ouija
-    second: {fileID: -6529957273054592511, guid: d958d4be4dc0be444a42998443bd73cd,
-      type: 3}
+    second: {fileID: 2100000, guid: b417d9d651a76f6489f03ffddab98d45, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
