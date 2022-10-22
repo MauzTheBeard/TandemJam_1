@@ -6,6 +6,7 @@ public class OuijaBoardController : MonoBehaviour
 {
     [SerializeField]
     private GameObject arrowHead = null;
+    private Rigidbody arrowHeadRigidbody = null;
 
     [SerializeField]
     private List<Transform> characterTransforms = null;
@@ -13,13 +14,25 @@ public class OuijaBoardController : MonoBehaviour
     [Space(10)]
 
     [SerializeField]
+    private LayerMask layerMask;
+    [SerializeField]
     private float transitionSpeed = 0.0f;
+    private bool movementAllowed = true;
 
     private float arrowStayOnCharacterTime = 1.0f;
     private float arrowStayOnCharacterTimeElapsed = 0.0f;
 
     private int currentIndex = -1;
     private float rotationSpeed = 0.0f;
+
+    private bool isLookingAtBoard = false;
+    private float lookingAtBoardTimerTick = 0.0f;
+    private bool ouijaWasThrown = false;
+
+    private void Awake()
+    {
+        arrowHeadRigidbody = arrowHead.GetComponent<Rigidbody>();
+    }
 
     private void Start()
     {
@@ -30,20 +43,39 @@ public class OuijaBoardController : MonoBehaviour
     private void Update()
     {
         Movement();
+        LookingAtBoardTimer();
+    }
+
+    private void FixedUpdate()
+    {
+        RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, 2.0f, layerMask))
+        {
+            isLookingAtBoard = true;
+        }
+        else
+        {
+            isLookingAtBoard = false;
+        }
     }
 
     private void Movement()
     {
-        if (Vector3.Distance(arrowHead.transform.position, characterTransforms[currentIndex].position) > 0.005f)
+        if (movementAllowed)
         {
-            float step = transitionSpeed * Time.deltaTime;
-            arrowHead.transform.position = Vector3.MoveTowards(arrowHead.transform.position, characterTransforms[currentIndex].position, step);
-            arrowHead.transform.Rotate(0, rotationSpeed, 0);
-        }
-        else
-        {
-            StayOnCharTimer();
-        }
+            if (Vector3.Distance(arrowHead.transform.position, characterTransforms[currentIndex].position) > 0.005f)
+            {
+                float step = transitionSpeed * Time.deltaTime;
+                arrowHead.transform.position = Vector3.MoveTowards(arrowHead.transform.position, characterTransforms[currentIndex].position, step);
+                arrowHead.transform.Rotate(0, rotationSpeed, 0);
+            }
+            else
+            {
+                StayOnCharTimer();
+            }
+        }        
     }
 
     private void SetRandomRotationSpeed()
@@ -76,5 +108,28 @@ public class OuijaBoardController : MonoBehaviour
         {
             currentIndex++;
         }
+    }
+
+    private void LookingAtBoardTimer()
+    {
+        if (isLookingAtBoard && ouijaWasThrown == false)
+        {
+            lookingAtBoardTimerTick += Time.deltaTime;
+
+            if (lookingAtBoardTimerTick >= 5.5f)
+            {
+                ThrowOuija();
+            }
+        }
+    }
+
+    private void ThrowOuija()
+    {
+        movementAllowed = false;
+        AudioManager.Instance.PlayEventSound("ThrowIt");
+        arrowHeadRigidbody.useGravity = true;
+        arrowHeadRigidbody.AddForce(new Vector3(0.0f, 13.5f, 0.5f), ForceMode.Impulse);
+        arrowHead.transform.rotation = Random.rotation;
+        ouijaWasThrown = true;
     }
 }

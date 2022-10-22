@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        GroundCheck();
+        //GroundCheck();
         Movement();
     }
 

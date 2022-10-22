@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4165782205453433184}
   - component: {fileID: 6561096190724417170}
   - component: {fileID: 7954023760684699682}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: X
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 5016090003466918414}
   - component: {fileID: 6759857896428790511}
   - component: {fileID: 2929413730088872372}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 4200288099315069524}
   - component: {fileID: 3627621304716676583}
   - component: {fileID: 2790986614374727192}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: I
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -258,7 +258,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3858300470488078585}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: CharacterTransforms
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   - component: {fileID: 8505332480524431428}
   - component: {fileID: 5078660596888111224}
   - component: {fileID: 1363351232508741809}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Z
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -383,7 +383,7 @@ GameObject:
   - component: {fileID: 8178083664409565157}
   - component: {fileID: 2801534567308215970}
   - component: {fileID: 288315959821062924}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: E
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -466,7 +466,7 @@ GameObject:
   - component: {fileID: 5835011819301890603}
   - component: {fileID: 4611884886801364459}
   - component: {fileID: 2823987793838118800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: M
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -549,7 +549,7 @@ GameObject:
   - component: {fileID: 8503952312245750652}
   - component: {fileID: 8763603348843512662}
   - component: {fileID: 2788746628376522505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: N
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -632,7 +632,7 @@ GameObject:
   - component: {fileID: 5474473399990779785}
   - component: {fileID: 8179081032060986310}
   - component: {fileID: 3728466177229666290}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: A (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -714,7 +714,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3645978746369195527}
   - component: {fileID: 7070334383690379965}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OuijaBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -762,6 +762,9 @@ MonoBehaviour:
   - {fileID: 5474473399990779785}
   - {fileID: 3380447968466318195}
   - {fileID: 8505332480524431428}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 128
   transitionSpeed: 0
 --- !u!1 &6594474081863044340
 GameObject:
@@ -774,7 +777,7 @@ GameObject:
   - component: {fileID: 3380447968466318195}
   - component: {fileID: 3450930654982803969}
   - component: {fileID: 8850865460992313532}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: U
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -913,6 +916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Ouija
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9f0b4f91dbb9ccb40b67352ddc746d68,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9f0b4f91dbb9ccb40b67352ddc746d68, type: 3}
 --- !u!1 &276860154569246340 stripped
@@ -921,6 +929,36 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1087323567579888597}
   m_PrefabAsset: {fileID: 0}
+--- !u!54 &8174137705568281912
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276860154569246340}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!64 &5750692963794442199
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276860154569246340}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8964688055481474484, guid: 9f0b4f91dbb9ccb40b67352ddc746d68, type: 3}
 --- !u!4 &620452742543907902 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9f0b4f91dbb9ccb40b67352ddc746d68,
@@ -994,8 +1032,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Ouijaboard
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d958d4be4dc0be444a42998443bd73cd,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d958d4be4dc0be444a42998443bd73cd, type: 3}
+--- !u!1 &2622374396173525047 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d958d4be4dc0be444a42998443bd73cd,
+    type: 3}
+  m_PrefabInstance: {fileID: 2928995963551718758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &6820335799285761058
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2622374396173525047}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.6, y: 0.03, z: 0.39999998}
+  m_Center: {x: -0.000000044703484, y: 0.015, z: 0}
 --- !u!4 &3400036514173876877 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d958d4be4dc0be444a42998443bd73cd,

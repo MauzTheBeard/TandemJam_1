@@ -13,11 +13,13 @@ public class ActionCaster : MonoBehaviour
     private DoorController currentDoorController = null;
     private int doorOpenDirection = 0;
 
+    private bool isTryingToKnock = false;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && isInDoorRange && currentDoorController != null)
         {
-            currentDoorController.TryOpen(doorOpenDirection);            
+            currentDoorController.Open(doorOpenDirection);
         }
     }
 
@@ -31,22 +33,26 @@ public class ActionCaster : MonoBehaviour
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 3.0f, layerMask))
+        if (Physics.Raycast(ray, out hit, 3.5f, layerMask))
         {
             currentDoorController = hit.collider.gameObject.GetComponentInParent<DoorController>();
 
             if (GetDirectionToOpen(hit) > 0)
             {
-                //Debug.Log("Right");
                 doorOpenDirection = 1;
             }
             else
             {
-                //Debug.Log("Left");
                 doorOpenDirection = -1;
             }
 
             isInDoorRange = true;
+
+            if (isTryingToKnock == false)
+            {
+                currentDoorController.TryKnocking();
+                isTryingToKnock = true;
+            }            
         }
         else
         {
@@ -64,6 +70,7 @@ public class ActionCaster : MonoBehaviour
 
     private void Reset()
     {
+        isTryingToKnock = false;
         currentDoorController = null;
         doorOpenDirection = 0;
         isInDoorRange = false;

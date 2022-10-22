@@ -19,6 +19,9 @@ public class DoorController : MonoBehaviour
 
     private DoorAudioController audioController = null;
 
+    private int doorKnockEventCount = 2;
+    private bool isKnocking = false;
+
     private void Start()
     {
         audioController = GetComponent<DoorAudioController>();
@@ -38,23 +41,14 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    public void TryOpen(int direction)
+    public void Open(int direction)
     {
-        if (Random.Range(0, 100) < 100)
+        if (!LeanTween.isTweening(doorModel) && isOpen == false && isKnocking == false)
         {
-            StartCoroutine(DoorKnocking());
-        }
-        else
-        {
-            Open(direction);
-        }
-    }
-
-    private void Open(int direction)
-    {
-        audioController.PlayOpenSound();
-        LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();
-        isOpen = true;
+            audioController.PlayOpenSound();
+            LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();
+            isOpen = true;
+        }        
     }
 
     private void Close()
@@ -64,13 +58,25 @@ public class DoorController : MonoBehaviour
         isOpen = false;
     }
 
+    public void TryKnocking()
+    {
+        if (Random.Range(0, 100) < 20 && doorKnockEventCount <= 3 && isOpen == false)
+        {
+            doorKnockEventCount++;
+            StartCoroutine(DoorKnocking());
+        }
+    }
+
     private IEnumerator DoorKnocking()
     {
+        isKnocking = true;
+
         for (int i = 0; i < 3; i++)
         {
             audioController.PlayRandomKnockSound();
-
-            yield return null;
+            yield return new WaitForSeconds(0.3f);
         }
+
+        isKnocking = false;
     }
 }

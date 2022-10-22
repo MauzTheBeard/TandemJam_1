@@ -32,7 +32,7 @@ public class DoorAudioController : MonoBehaviour
 
     public void PlayRandomKnockSound()
     {
-        int rIndex = Random.RandomRange(0, doorKnockClips.Count - 1);
+        int rIndex = Random.Range(0, doorKnockClips.Count - 1);
 
         audioSource.clip = doorKnockClips[rIndex];
         audioSource.Play();
