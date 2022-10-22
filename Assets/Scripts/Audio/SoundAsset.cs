@@ -14,6 +14,7 @@ public class SoundAsset
     public float Volume = 1.0f;
     [Range(0, 1)]
     public float Pitch = 1.0f;
+    public bool Loop = false;
 
     [HideInInspector]
     public AudioSource Source = null;

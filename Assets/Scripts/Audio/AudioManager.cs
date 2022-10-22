@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -80,6 +81,7 @@ public class AudioManager : MonoBehaviour
             soundAsset.Source.clip = soundAsset.Clip;
             soundAsset.Source.volume = soundAsset.Volume;
             soundAsset.Source.pitch = soundAsset.Pitch;
+            soundAsset.Source.loop = soundAsset.Loop;
         }
     }
 
@@ -105,6 +107,13 @@ public class AudioManager : MonoBehaviour
     public void PlayAmbientSound(string name)
     {
         PlaySound(AmbientSounds.Find(sound => sound.Name == name));
+    }
+
+    public void PlayAmbientSoundFadeIn(string name, float fadeInOffset)
+    {
+        SoundAsset soundAsset = AmbientSounds.Find(sound => sound.Name == name);
+        PlaySound(soundAsset);
+        StartCoroutine(StartFade(soundAsset.Source, fadeInOffset));
     }
 
     public void StopAmbientSound(string name)
@@ -158,6 +167,19 @@ public class AudioManager : MonoBehaviour
         {
             soundAsset.Source.PlayDelayed(delayOffset);
         }
+    }
+
+    public IEnumerator StartFade(AudioSource audioSource, float duration)
+    {
+        float currentTime = 0;
+        float start = audioSource.volume;
+        while (currentTime < duration)
+        {
+            currentTime += Time.deltaTime;
+            audioSource.volume = Mathf.Lerp(start, 1, currentTime / duration);
+            yield return null;
+        }
+        yield break;
     }
 
     #endregion

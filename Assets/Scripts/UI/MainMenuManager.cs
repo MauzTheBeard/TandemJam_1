@@ -9,5 +9,6 @@ public class MainMenuManager : MonoBehaviour
     {
         AudioManager.Instance.PlayUISound("StartGame");
         SceneManager.LoadScene("MauzScene");
+        AudioManager.Instance.PlayAmbientSoundFadeIn("Atmo0", 5.0f);
     }
 }
