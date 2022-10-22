@@ -8,6 +8,8 @@ public class DoorAudioController : MonoBehaviour
     private List<AudioClip> doorOpenClips = null;
     [SerializeField]
     private List<AudioClip> doorCloseClips = null;
+    [SerializeField]
+    private List<AudioClip> doorKnockClips = null;
 
     private AudioSource audioSource = null;
 
@@ -26,5 +28,13 @@ public class DoorAudioController : MonoBehaviour
     {
         audioSource.clip = doorCloseClips[0];
         audioSource.PlayDelayed(0.75f);
+    }
+
+    public void PlayRandomKnockSound()
+    {
+        int rIndex = Random.RandomRange(0, doorKnockClips.Count - 1);
+
+        audioSource.clip = doorKnockClips[rIndex];
+        audioSource.Play();
     }
 }

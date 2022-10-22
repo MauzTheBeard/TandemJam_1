@@ -38,7 +38,19 @@ public class DoorController : MonoBehaviour
         }
     }
 
-    public void Open(int direction)
+    public void TryOpen(int direction)
+    {
+        if (Random.Range(0, 100) < 100)
+        {
+            StartCoroutine(DoorKnocking());
+        }
+        else
+        {
+            Open(direction);
+        }
+    }
+
+    private void Open(int direction)
     {
         audioController.PlayOpenSound();
         LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();
@@ -50,5 +62,15 @@ public class DoorController : MonoBehaviour
         LeanTween.rotateY(doorModel, closedPosition, transitionTime).setEaseInOutQuad();
         audioController.PlayCloseSound();
         isOpen = false;
+    }
+
+    private IEnumerator DoorKnocking()
+    {
+        for (int i = 0; i < 3; i++)
+        {
+            audioController.PlayRandomKnockSound();
+
+            yield return null;
+        }
     }
 }
