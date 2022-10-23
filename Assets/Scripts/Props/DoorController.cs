@@ -46,14 +46,14 @@ public class DoorController : MonoBehaviour
         if (!LeanTween.isTweening(doorModel) && isOpen == false && isKnocking == false)
         {
             audioController.PlayOpenSound();
-            LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();            
+            LeanTween.rotateLocal(doorModel, new Vector3(0, openPosition * direction, 0), transitionTime).setEaseInOutQuad();
             isOpen = true;
         }        
     }
 
     private void Close()
     {
-        LeanTween.rotateY(doorModel, closedPosition, transitionTime).setEaseInOutQuad();
+        LeanTween.rotateLocal(doorModel, new Vector3(0, closedPosition, 0), transitionTime).setEaseInOutQuad();
         audioController.PlayCloseSound();
         isOpen = false;
     }

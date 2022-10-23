@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded = false;
 
-    private void Update()
+    private void LateUpdate()
     {
         //GroundCheck();
         Movement();
@@ -50,14 +50,24 @@ public class PlayerMovement : MonoBehaviour
         Vector3 motion = transform.right * x + transform.forward * z;
 
         characterController.Move(motion * movementSpeed * Time.deltaTime);
+    }
 
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
-        }
+    private void OldMovement()
+    {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
 
-        velocity.y += gravity * Time.deltaTime;
+        Vector3 motion = transform.right * x + transform.forward * z;
 
-        characterController.Move(velocity * Time.deltaTime);
+        characterController.Move(motion * movementSpeed * Time.deltaTime);
+
+        //if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        //{
+        //    velocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravity);
+        //}
+
+        //velocity.y += gravity * Time.deltaTime;
+
+        //characterController.Move(velocity * Time.deltaTime);
     }
 }
