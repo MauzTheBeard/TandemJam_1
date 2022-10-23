@@ -62,7 +62,7 @@ public class ActionCaster : MonoBehaviour
 
     private float GetDirectionToOpen(RaycastHit hit)
     {
-        Vector3 forward = hit.transform.TransformDirection(Vector3.right);
+        Vector3 forward = hit.transform.TransformDirection(Vector3.forward);
         Vector3 toOther = transform.position - hit.transform.position;
         float DotResult = Vector3.Dot(toOther, forward);
         return DotResult;

@@ -46,7 +46,7 @@ public class DoorController : MonoBehaviour
         if (!LeanTween.isTweening(doorModel) && isOpen == false && isKnocking == false)
         {
             audioController.PlayOpenSound();
-            LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();
+            LeanTween.rotateY(doorModel, openPosition * direction, transitionTime).setEaseInOutQuad();            
             isOpen = true;
         }        
     }
