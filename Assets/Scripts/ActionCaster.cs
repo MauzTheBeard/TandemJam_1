@@ -33,7 +33,7 @@ public class ActionCaster : MonoBehaviour
         RaycastHit hit;
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if (Physics.Raycast(ray, out hit, 3.5f, layerMask))
+        if (Physics.Raycast(ray, out hit, 2.5f, layerMask))
         {
             currentDoorController = hit.collider.gameObject.GetComponentInParent<DoorController>();
 
