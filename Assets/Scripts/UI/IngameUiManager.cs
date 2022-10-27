@@ -36,7 +36,7 @@ public class IngameUiManager : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
         else
         {
@@ -48,7 +48,7 @@ public class IngameUiManager : MonoBehaviour
     {
         UpdateUI();
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space))
         {
             PauseGame();
         }
@@ -74,20 +74,25 @@ public class IngameUiManager : MonoBehaviour
 
     public void ButtonMainMenuClick()
     {
+        AudioManager.Instance.StopAmbientSound("Atmo0");
         SceneManager.LoadScene("MainMenuScene");
     }
 
     private void PauseGame()
-    {
+    {        
         lblTitle.text = "Game Paused";
 
         if (panelUI.activeSelf)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             panelUI.SetActive(false);
             Time.timeScale = 1;
         }
         else
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             panelUI.SetActive(true);
             Time.timeScale = 0;
         }

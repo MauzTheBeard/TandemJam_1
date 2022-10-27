@@ -19,7 +19,7 @@ public class DoorController : MonoBehaviour
 
     private DoorAudioController audioController = null;
 
-    private int doorKnockEventCount = 2;
+    private int doorKnockEventCount = 0;
     private bool isKnocking = false;
 
     private void Start()
@@ -60,7 +60,7 @@ public class DoorController : MonoBehaviour
 
     public void TryKnocking()
     {
-        if (Random.Range(0, 100) < 20 && doorKnockEventCount <= 3 && isOpen == false)
+        if (Random.Range(0, 100) < 5 && doorKnockEventCount <= 3 && isOpen == false)
         {
             doorKnockEventCount++;
             StartCoroutine(DoorKnocking());

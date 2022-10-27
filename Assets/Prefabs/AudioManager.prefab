@@ -63,6 +63,7 @@ Transform:
   - {fileID: 1011260915819507409}
   - {fileID: 1011260914642650340}
   - {fileID: 1011260915445393709}
+  - {fileID: 6401810074306052417}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -81,6 +82,7 @@ MonoBehaviour:
   UISoundsObject: {fileID: 1011260915819507414}
   AmbientSoundsObject: {fileID: 1011260914642650341}
   EventSoundsObject: {fileID: 1011260915445393682}
+  FootStepSoundsObject: {fileID: 6865673410056433784}
   UISounds:
   - Name: StartGame
     Clip: {fileID: 8300000, guid: 9774bf531f019304392ab970cad8b9e9, type: 3}
@@ -88,7 +90,13 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  AmbientSounds: []
+  AmbientSounds:
+  - Name: Atmo0
+    Clip: {fileID: 8300000, guid: 54f56a03d363092419a28185d0e7d58c, type: 3}
+    Volume: 0
+    Pitch: 1
+    Loop: 1
+    Source: {fileID: 0}
   EventSounds:
   - Name: DropIt
     Clip: {fileID: 8300000, guid: 70101811b3f638b47b8bd32026b78ec5, type: 3}
@@ -108,10 +116,10 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
-    Volume: 0
-    Pitch: 0
+  - Name: GlassBreak
+    Clip: {fileID: 8300000, guid: 46cfffdb261946849a6c1b7d785734a6, type: 3}
+    Volume: 1
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Name: 
@@ -120,7 +128,43 @@ MonoBehaviour:
     Pitch: 0
     Loop: 0
     Source: {fileID: 0}
-  FootStepSounds: []
+  FootStepSounds:
+  - Name: Step01
+    Clip: {fileID: 8300000, guid: 1f0199a4c6005ec4abbb302f71bc036d, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Step02
+    Clip: {fileID: 8300000, guid: 53e2adf2ac488ef46bb2b4074de9e363, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Step03
+    Clip: {fileID: 8300000, guid: a03a96c5d1e99b4409ddd79098abd9ab, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Step04
+    Clip: {fileID: 8300000, guid: 7187dc81f98b8be4eb97bfc4dd9a5abf, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Step05
+    Clip: {fileID: 8300000, guid: e3cfcb32689b274419ac73380ea96888, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Step06
+    Clip: {fileID: 8300000, guid: 314d37dfb74502a4094b835d0e0d6c23, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
 --- !u!1 &1011260915445393682
 GameObject:
   m_ObjectHideFlags: 0
@@ -182,4 +226,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1011260914840200215}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6865673410056433784
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6401810074306052417}
+  m_Layer: 0
+  m_Name: FootstepSounds
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6401810074306052417
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6865673410056433784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1011260914840200215}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

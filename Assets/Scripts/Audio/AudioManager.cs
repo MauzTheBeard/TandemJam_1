@@ -15,6 +15,7 @@ public class AudioManager : MonoBehaviour
     public GameObject UISoundsObject = null;
     public GameObject AmbientSoundsObject = null;
     public GameObject EventSoundsObject = null;
+    public GameObject FootStepSoundsObject = null;
 
     [Space(20)]
 
@@ -60,6 +61,7 @@ public class AudioManager : MonoBehaviour
         GenerateUISoundSources();
         GenerateAmbientSoundSources();
         GenerateEventSoundSources();
+        GenerateFootStepSounds();
     }
 
     private void GenerateUISoundSources()
@@ -96,6 +98,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void GenerateFootStepSounds()
+    {
+        foreach (SoundAsset soundAsset in FootStepSounds)
+        {
+            soundAsset.Source = EventSoundsObject.AddComponent<AudioSource>();
+            soundAsset.Source.clip = soundAsset.Clip;
+            soundAsset.Source.volume = soundAsset.Volume;
+            soundAsset.Source.pitch = soundAsset.Pitch;
+        }
+    }
+
 
     #endregion
 
@@ -124,6 +137,11 @@ public class AudioManager : MonoBehaviour
     public void PlayEventSound(string name)
     {
         PlaySound(EventSounds.Find(sound => sound.Name == name));
+    }
+
+    public void PlayEventSound(string name, float delayOffset)
+    {
+        PlaySoundDelayed(EventSounds.Find(sound => sound.Name == name), delayOffset);
     }
 
     public void PlayRandomFootstepSound()

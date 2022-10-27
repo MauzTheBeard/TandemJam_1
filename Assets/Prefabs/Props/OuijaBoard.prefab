@@ -765,7 +765,7 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 128
-  transitionSpeed: 0
+  transitionSpeed: 1
 --- !u!1 &6594474081863044340
 GameObject:
   m_ObjectHideFlags: 0

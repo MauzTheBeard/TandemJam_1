@@ -19,7 +19,7 @@ public class CrucifixController : MonoBehaviour
     {
         if (!hasDropped)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) < 7.5f)
+            if (Vector3.Distance(transform.position, player.transform.position) < 3.5f)
             {
                 DropIt();
             }

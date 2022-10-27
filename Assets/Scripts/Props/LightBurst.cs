@@ -19,7 +19,7 @@ public class LightBurst : MonoBehaviour
     {
         if (!hasBursted)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) < 3.5f)
+            if (Vector3.Distance(transform.position, player.transform.position) < 3.75f)
             {
                 BurstIt();
             }
@@ -29,6 +29,7 @@ public class LightBurst : MonoBehaviour
     private void BurstIt()
     {
         AudioManager.Instance.PlayEventSound("LightBurst");
+        AudioManager.Instance.PlayEventSound("GlassBreak", 0.175f);
         lightSource.enabled = false;
         hasBursted = true;
     }

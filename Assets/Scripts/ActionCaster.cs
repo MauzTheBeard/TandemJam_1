@@ -17,7 +17,7 @@ public class ActionCaster : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && isInDoorRange && currentDoorController != null)
+        if ((Input.GetKeyDown(KeyCode.E) || Input.GetMouseButtonDown(0)) && isInDoorRange && currentDoorController != null)
         {
             currentDoorController.Open(doorOpenDirection);
         }
