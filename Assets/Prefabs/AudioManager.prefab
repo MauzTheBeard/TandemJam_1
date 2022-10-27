@@ -102,10 +102,10 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
-    Volume: 0
-    Pitch: 0
+  - Name: LightBurst
+    Clip: {fileID: 8300000, guid: a2451fb2a03126547ade0f2ed3913120, type: 3}
+    Volume: 1
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   - Name: 

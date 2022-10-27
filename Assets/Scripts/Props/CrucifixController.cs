@@ -17,24 +17,24 @@ public class CrucifixController : MonoBehaviour
 
     private void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 7.5f)
+        if (!hasDropped)
         {
-            DropIt();
-        }
-        else
-        {
-            Vector3 targetPostition = new Vector3(player.transform.position.x, this.transform.position.y, player.transform.position.z);
-            transform.LookAt(targetPostition);
-        }
+            if (Vector3.Distance(transform.position, player.transform.position) < 7.5f)
+            {
+                DropIt();
+            }
+            else
+            {
+                Vector3 targetPostition = new Vector3(player.transform.position.x, this.transform.position.y, player.transform.position.z);
+                transform.LookAt(targetPostition);
+            }
+        }        
     }
 
     private void DropIt()
     {
-        if (!hasDropped)
-        {
-            AudioManager.Instance.PlayEventSound("DropIt");
-            rigidbody.useGravity = true;
-            hasDropped = true;
-        }        
+        AudioManager.Instance.PlayEventSound("DropIt");
+        rigidbody.useGravity = true;
+        hasDropped = true;
     }
 }
