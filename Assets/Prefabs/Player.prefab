@@ -202,7 +202,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 128
-  movementSpeed: 3
+  movementSpeed: 2.8
   jumpHeight: 3
 --- !u!114 &6243666257645663350
 MonoBehaviour:

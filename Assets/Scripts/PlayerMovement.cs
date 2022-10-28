@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
     {
         footstepTimerElapsed += Time.deltaTime;
 
-        if (footstepTimerElapsed >= 0.7)
+        if (footstepTimerElapsed >= 0.6)
         {
             AudioManager.Instance.PlayRandomFootstepSound();
             footstepTimerElapsed = 0.0f;
