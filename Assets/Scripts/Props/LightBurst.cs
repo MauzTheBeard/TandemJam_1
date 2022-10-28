@@ -19,7 +19,7 @@ public class LightBurst : MonoBehaviour
     {
         if (!hasBursted)
         {
-            if (Vector3.Distance(transform.position, player.transform.position) < 3.75f)
+            if (Vector3.Distance(transform.position, player.transform.position) < 3.5f)
             {
                 BurstIt();
             }
