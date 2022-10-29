@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public GameObject AmbientSoundsObject = null;
     public GameObject EventSoundsObject = null;
     public GameObject FootStepSoundsObject = null;
+    public GameObject CabinetScreamingSoundsObject = null;
 
     [Space(20)]
 
@@ -26,6 +27,10 @@ public class AudioManager : MonoBehaviour
     [Space(20)]
 
     public List<SoundAsset> FootStepSounds = null;
+
+    [Space(20)]
+
+    public List<SoundAsset> CabinetScreamingSounds = null;
     
     #endregion
 
@@ -62,6 +67,7 @@ public class AudioManager : MonoBehaviour
         GenerateAmbientSoundSources();
         GenerateEventSoundSources();
         GenerateFootStepSounds();
+        GenerateCabinetScreamingSounds();
     }
 
     private void GenerateUISoundSources()
@@ -109,13 +115,24 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void GenerateCabinetScreamingSounds()
+    {
+        foreach (SoundAsset soundAsset in CabinetScreamingSounds)
+        {
+            soundAsset.Source = EventSoundsObject.AddComponent<AudioSource>();
+            soundAsset.Source.clip = soundAsset.Clip;
+            soundAsset.Source.volume = soundAsset.Volume;
+            soundAsset.Source.pitch = soundAsset.Pitch;
+        }
+    }
+
 
     #endregion
 
     public void PlayUISound(string name)
     {
         PlaySound(UISounds.Find(sound => sound.Name == name));
-    }    
+    }
 
     public void PlayAmbientSound(string name)
     {
