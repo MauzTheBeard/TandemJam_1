@@ -63,8 +63,8 @@ MonoBehaviour:
   doorRightObject: {fileID: 4510321661314197694}
   drawerLeftObject: {fileID: 8784110498497198061}
   drawerRightObject: {fileID: 7864673717093151635}
-  leftAudioSource: {fileID: 0}
-  rightAudioSource: {fileID: 0}
+  leftAudioSource: {fileID: 8048422750301499206}
+  rightAudioSource: {fileID: 6216148218593697608}
 --- !u!1001 &6861937255492101016
 PrefabInstance:
   m_ObjectHideFlags: 0

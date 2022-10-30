@@ -83,6 +83,7 @@ MonoBehaviour:
   AmbientSoundsObject: {fileID: 1011260914642650341}
   EventSoundsObject: {fileID: 1011260915445393682}
   FootStepSoundsObject: {fileID: 6865673410056433784}
+  CabinetScreamingSoundsObject: {fileID: 0}
   UISounds:
   - Name: StartGame
     Clip: {fileID: 8300000, guid: 9774bf531f019304392ab970cad8b9e9, type: 3}
@@ -161,6 +162,37 @@ MonoBehaviour:
     Source: {fileID: 0}
   - Name: Step06
     Clip: {fileID: 8300000, guid: 314d37dfb74502a4094b835d0e0d6c23, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  CabinetScreamingSounds:
+  - Name: Scream01
+    Clip: {fileID: 8300000, guid: c4efe668d8e914a4084bd39df663281c, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Scream02
+    Clip: {fileID: 8300000, guid: 9bc6d12c28e2fcd4fb1dedd9a2cd9b6d, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Scream03
+    Clip: {fileID: 8300000, guid: 3447fb3cd70e9f848b80d1be2b1e591f, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Scream04
+    Clip: {fileID: 8300000, guid: db4811ce5f1805148822641185fda317, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: Scream05
+    Clip: {fileID: 8300000, guid: 358de4e8c7d9f56408dbfbb79a84b1ca, type: 3}
     Volume: 1
     Pitch: 1
     Loop: 0

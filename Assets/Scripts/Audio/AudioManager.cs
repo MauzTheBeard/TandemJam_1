@@ -168,6 +168,11 @@ public class AudioManager : MonoBehaviour
         PlaySound(FootStepSounds[random]);
     }
 
+    public void PlayCabinetScreamSound(int index)
+    {
+        PlaySound(CabinetScreamingSounds[index]);
+    }
+
     private void PlaySound(SoundAsset soundAsset)
     {
         if (soundAsset == null)
