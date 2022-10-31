@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CrucifixController : MonoBehaviour
 {
-    private Rigidbody rigidbody = null;
+    private Rigidbody rigidBody = null;
     private GameObject player = null;
 
     private bool hasDropped = false;
 
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        rigidBody = GetComponent<Rigidbody>();
         player = GameObject.Find("Player");
     }
 
@@ -34,7 +34,15 @@ public class CrucifixController : MonoBehaviour
     private void DropIt()
     {
         AudioManager.Instance.PlayEventSound("DropIt");
-        rigidbody.useGravity = true;
+        rigidBody.useGravity = true;
         hasDropped = true;
+
+        StartCoroutine(ScaryPropDoneDelay());
+    }
+
+    private IEnumerator ScaryPropDoneDelay()
+    {
+        yield return new WaitForSeconds(1.1f);
+        PlayerProgress.Instance.IncrementEncounter();
     }
 }

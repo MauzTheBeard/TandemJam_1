@@ -123,6 +123,12 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Name: PaintingGlitch
+    Clip: {fileID: 8300000, guid: 55e9ba178302d864292b6a8d3ae3754a, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
   - Name: 
     Clip: {fileID: 0}
     Volume: 0

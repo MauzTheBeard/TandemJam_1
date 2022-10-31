@@ -20,7 +20,7 @@ public class AudioManager : MonoBehaviour
 
     [Space(20)]
 
-    public List<SoundAsset> UISounds = null;    
+    public List<SoundAsset> UISounds = null;
     public List<SoundAsset> AmbientSounds = null;
     public List<SoundAsset> EventSounds = null;
 

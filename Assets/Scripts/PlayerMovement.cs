@@ -7,16 +7,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private CharacterController characterController = null;
     [SerializeField]
-    private Transform groundCheck = null;
-    [SerializeField]
-    private float groundDistance = 0.4f;
-    [SerializeField]
     private LayerMask groundMask;
 
     [SerializeField]
     private float movementSpeed = 12.0f;
-    [SerializeField]
-    private float jumpHeight = 3.0f;
 
     private float footstepTimerElapsed = 0.0f;
 

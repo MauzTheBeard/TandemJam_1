@@ -22,6 +22,8 @@ public class IngameUiManager : MonoBehaviour
     private TextMeshProUGUI lblTitle = null;
     [SerializeField]
     private TextMeshProUGUI lblGameTime = null;
+    [SerializeField]
+    private TextMeshProUGUI lblPropsProgress = null;
 
     private float gameTime = 0.0f;
 
@@ -46,22 +48,29 @@ public class IngameUiManager : MonoBehaviour
 
     private void Update()
     {
+        if (PlayerProgress.Instance.IsGameOver)
+        {
+            EndGame();
+            return;
+        }
+
         UpdateUI();
 
-        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Space) && !PlayerProgress.Instance.IsGameOver)
         {
             PauseGame();
         }
 
-        if (Time.timeScale == 1)
+        if ((int)Time.timeScale == 1)
         {
             gameTime += Time.deltaTime;
         }
     }
 
     private void UpdateUI()
-    {        
+    {
         lblGameTime.text = $"Time played: {FormatGameTime()}";
+        lblPropsProgress.text = $"Scary Encounters: {PlayerProgress.Instance.GetProgress()}";
     }
 
     private string FormatGameTime()
@@ -79,28 +88,40 @@ public class IngameUiManager : MonoBehaviour
     }
 
     private void PauseGame()
-    {        
+    {
         lblTitle.text = "Game Paused";
 
         if (panelUI.activeSelf)
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            panelUI.SetActive(false);
-            Time.timeScale = 1;
+            ChangeUIState(false);
         }
         else
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            panelUI.SetActive(true);
-            Time.timeScale = 0;
+            ChangeUIState(true);
         }
     }
 
     public void EndGame()
     {
         lblTitle.text = "Game End";
-        panelUI.SetActive(true);
+        ChangeUIState(true);
+    }
+
+    private void ChangeUIState(bool pauseGame)
+    {
+        if (pauseGame)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            panelUI.SetActive(true);
+            Time.timeScale = 0;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            panelUI.SetActive(false);
+            Time.timeScale = 1;
+        }
     }
 }

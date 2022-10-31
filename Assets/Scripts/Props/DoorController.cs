@@ -60,7 +60,7 @@ public class DoorController : MonoBehaviour
 
     public void TryKnocking()
     {
-        if (Random.Range(0, 100) < 5 && doorKnockEventCount <= 3 && isOpen == false)
+        if (Random.Range(0, 100) < 5 && doorKnockEventCount < 1 && isOpen == false)
         {
             doorKnockEventCount++;
             StartCoroutine(DoorKnocking());
@@ -78,5 +78,6 @@ public class DoorController : MonoBehaviour
         }
 
         isKnocking = false;
+        PlayerProgress.Instance.IncrementEncounter();
     }
 }

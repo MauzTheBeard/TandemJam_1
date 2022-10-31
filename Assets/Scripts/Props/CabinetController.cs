@@ -42,10 +42,9 @@ public class CabinetController : MonoBehaviour
 
         LeanTween.rotateLocal(doorLeftObject, new Vector3(0, 9.9f, 0), 0.2f).setEaseInOutQuad().setLoopPingPong(5);
         LeanTween.rotateLocal(doorRightObject, new Vector3(0, -11, 0), 0.25f).setEaseInOutQuad().setLoopPingPong(5);
+
         LeanTween.moveLocalZ(drawerLeftObject, 0.5366f, 0.1f).setEaseInOutQuad().setLoopPingPong(7);
         LeanTween.moveLocalZ(drawerRightObject, 0.5366f, 0.14f).setEaseInOutQuad().setLoopPingPong(6);
-
-        Debug.Log("DONE");
     }
 
     private IEnumerator ScreamAudioRoutine()

@@ -131,5 +131,13 @@ public class OuijaBoardController : MonoBehaviour
         arrowHeadRigidbody.AddForce(new Vector3(0.0f, 13.5f, 0.5f), ForceMode.Impulse);
         arrowHead.transform.rotation = Random.rotation;
         ouijaWasThrown = true;
+
+        StartCoroutine(ScaryPropDoneDelay());
+    }
+
+    private IEnumerator ScaryPropDoneDelay()
+    {
+        yield return new WaitForSeconds(1.0f);
+        PlayerProgress.Instance.IncrementEncounter();
     }
 }
