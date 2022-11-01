@@ -19,8 +19,8 @@ public class DoorController : MonoBehaviour
 
     private DoorAudioController audioController = null;
 
-    private int doorKnockEventCount = 0;
     private bool isKnocking = false;
+    private bool hasKnocked = false;
 
     private void Start()
     {
@@ -60,11 +60,15 @@ public class DoorController : MonoBehaviour
 
     public void TryKnocking()
     {
-        if (Random.Range(0, 100) < 5 && doorKnockEventCount < 1 && isOpen == false)
+        if (hasKnocked == false)
         {
-            doorKnockEventCount++;
-            StartCoroutine(DoorKnocking());
+            if (Random.Range(0, 100) < 5 && isOpen == false)
+            {
+                hasKnocked = true;
+                StartCoroutine(DoorKnocking());
+            }
         }
+        
     }
 
     private IEnumerator DoorKnocking()

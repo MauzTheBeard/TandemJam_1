@@ -822,7 +822,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: El Titlo del Gameo
+  m_text: Scary Room Walker
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0056371f0a23434fb19863669a1efad, type: 2}
   m_sharedMaterial: {fileID: 2440325524894578200, guid: f0056371f0a23434fb19863669a1efad,
@@ -1849,8 +1849,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -173}
-  m_SizeDelta: {x: 2560, y: 112.6721}
+  m_AnchoredPosition: {x: -0.000030517578, y: -188.3}
+  m_SizeDelta: {x: 1662.7119, y: 112.6721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874742616
 MonoBehaviour:
@@ -1872,12 +1872,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
-    eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt
-    in culpa qui officia deserunt mollit anim id est laborum.
+  m_text: You have to find all of the six scary encounters to end the game. To open
+    doors press E or left mouse button, use space key to pause the game (or to adjust
+    mouse sensivity).
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0056371f0a23434fb19863669a1efad, type: 2}
   m_sharedMaterial: {fileID: 2440325524894578200, guid: f0056371f0a23434fb19863669a1efad,
@@ -1905,8 +1902,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 44
+  m_fontSizeBase: 44
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

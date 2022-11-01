@@ -42,7 +42,7 @@ public class OuijaBoardController : MonoBehaviour
 
     private void Update()
     {
-        Movement();
+        ArrowMovement();
         LookingAtBoardTimer();
     }
 
@@ -61,7 +61,7 @@ public class OuijaBoardController : MonoBehaviour
         }
     }
 
-    private void Movement()
+    private void ArrowMovement()
     {
         if (movementAllowed)
         {
@@ -128,7 +128,7 @@ public class OuijaBoardController : MonoBehaviour
         movementAllowed = false;
         AudioManager.Instance.PlayEventSound("ThrowIt");
         arrowHeadRigidbody.useGravity = true;
-        arrowHeadRigidbody.AddForce(new Vector3(0.0f, 13.5f, 0.5f), ForceMode.Impulse);
+        arrowHeadRigidbody.AddForce((Camera.main.transform.position - transform.position) * 4.0f, ForceMode.Impulse);
         arrowHead.transform.rotation = Random.rotation;
         ouijaWasThrown = true;
 

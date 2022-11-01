@@ -15,6 +15,8 @@ public class IngameUiManager : MonoBehaviour
 
     [SerializeField]
     private GameObject panelUI = null;
+    [SerializeField]
+    private Slider mouseSensivitySlider = null;
 
     [Space(10)]
 
@@ -25,8 +27,11 @@ public class IngameUiManager : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI lblPropsProgress = null;
 
-    private float gameTime = 0.0f;
+    [HideInInspector]
+    public float MouseSensivity { get; private set; }
 
+    private float gameTime = 0.0f;
+    
     private void Awake()
     {
         Singleton();
@@ -48,6 +53,8 @@ public class IngameUiManager : MonoBehaviour
 
     private void Update()
     {
+        MouseSensivity = mouseSensivitySlider.value;
+
         if (PlayerProgress.Instance.IsGameOver)
         {
             EndGame();

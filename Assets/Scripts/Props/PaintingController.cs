@@ -27,7 +27,7 @@ public class PaintingController : MonoBehaviour
 
     private IEnumerator MoveAround()
     {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i < 4; i++)
         {
             Vector3 newPos = new Vector3(Random.Range(-1.15f, 1.15f), Random.Range(-0.12f, 0.26f), 0);
             paintingObject.transform.localPosition = newPos;

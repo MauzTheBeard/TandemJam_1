@@ -6,8 +6,6 @@ public class MouseLook : MonoBehaviour
 {
     public Transform cameraTransform = null;
 
-    public float mouseSensivity = 100.0f;
-
     private float xRotation = 0.0f;
 
     private void Start()
@@ -17,8 +15,8 @@ public class MouseLook : MonoBehaviour
 
     private void LateUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensivity * Time.deltaTime;
+        float mouseX = Input.GetAxis("Mouse X") * IngameUiManager.Instance.MouseSensivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * IngameUiManager.Instance.MouseSensivity * Time.deltaTime;
 
         transform.Rotate(Vector3.up * mouseX);
 
