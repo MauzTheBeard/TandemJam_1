@@ -129,10 +129,10 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
-  - Name: 
-    Clip: {fileID: 0}
-    Volume: 0
-    Pitch: 0
+  - Name: FlashlightSwitch
+    Clip: {fileID: 8300000, guid: 14c297e2539805a42b778e6cf7880217, type: 3}
+    Volume: 1
+    Pitch: 1
     Loop: 0
     Source: {fileID: 0}
   FootStepSounds:

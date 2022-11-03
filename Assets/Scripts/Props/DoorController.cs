@@ -66,8 +66,7 @@ public class DoorController : MonoBehaviour
                 PlayerProgress.Instance.DoorHasKnocked = true;
                 StartCoroutine(DoorKnocking());
             }
-        }
-        
+        }        
     }
 
     private IEnumerator DoorKnocking()

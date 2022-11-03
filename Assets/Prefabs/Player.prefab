@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6107071431742572660}
   m_Layer: 6
-  m_Name: Torchlight
+  m_Name: Flashlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23,7 +23,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90767400261459876}
-  m_LocalRotation: {x: -0, y: -0.052700374, z: -3.4924588e-10, w: 0.9986104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.144, y: -0.076, z: -0.002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -31,7 +31,7 @@ Transform:
   - {fileID: 4342492261373814894}
   m_Father: {fileID: 3483549617977037799}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -6.042, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830181324558662213
 GameObject:
   m_ObjectHideFlags: 0
@@ -277,6 +277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67df0761934f64e429bcc4f11afe2031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashLightObject: {fileID: 90767400261459876}
 --- !u!1 &1495493613916657599
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,9 +324,9 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.9811321, g: 0.9263949, b: 0.68864363, a: 1}
   m_Intensity: 9.51
-  m_Range: 5.58534
+  m_Range: 7.260754
   m_SpotAngle: 39.904755
-  m_InnerSpotAngle: 25.466114
+  m_InnerSpotAngle: 23.684134
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
