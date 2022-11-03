@@ -13,6 +13,7 @@ public class PlayerProgress : MonoBehaviour
     private int propsCount = 0;
 
     public bool IsGameOver = false;
+    public bool DoorHasKnocked = false;
 
     private int propsEncountered = 0;    
 

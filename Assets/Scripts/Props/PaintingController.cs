@@ -29,7 +29,7 @@ public class PaintingController : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            Vector3 newPos = new Vector3(Random.Range(-1.15f, 1.15f), Random.Range(-0.12f, 0.26f), 0);
+            Vector3 newPos = new Vector3(Random.Range(-0.75f, 0.75f), Random.Range(-0.12f, 0.16f), 0);
             paintingObject.transform.localPosition = newPos;
 
             yield return new WaitForSeconds(0.1f);
