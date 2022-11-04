@@ -1616,6 +1616,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp_Static
       objectReference: {fileID: 0}
+    - target: {fileID: 5927425844598954659, guid: 6ee40bd8fddf188478742d1617ba9f57,
+        type: 3}
+      propertyPath: m_Range
+      value: 6.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927425844598954659, guid: 6ee40bd8fddf188478742d1617ba9f57,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.84705883
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927425844598954659, guid: 6ee40bd8fddf188478742d1617ba9f57,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927425844598954659, guid: 6ee40bd8fddf188478742d1617ba9f57,
+        type: 3}
+      propertyPath: m_SpotAngle
+      value: 179
+      objectReference: {fileID: 0}
+    - target: {fileID: 5927425844598954659, guid: 6ee40bd8fddf188478742d1617ba9f57,
+        type: 3}
+      propertyPath: m_InnerSpotAngle
+      value: 116.00842
+      objectReference: {fileID: 0}
+    - target: {fileID: 8735661451061789368, guid: 6ee40bd8fddf188478742d1617ba9f57,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.278
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ee40bd8fddf188478742d1617ba9f57, type: 3}
 --- !u!4 &267599687 stripped
@@ -2677,6 +2707,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lamp_Static_Burst
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837171816175272596, guid: f2d7294d71a8b404f969d52af5c8ea4f,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8459119
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837171816175272596, guid: f2d7294d71a8b404f969d52af5c8ea4f,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.96610063
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837171816175272596, guid: f2d7294d71a8b404f969d52af5c8ea4f,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5837171816175272596, guid: f2d7294d71a8b404f969d52af5c8ea4f,
+        type: 3}
+      propertyPath: m_Intensity
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2d7294d71a8b404f969d52af5c8ea4f, type: 3}
