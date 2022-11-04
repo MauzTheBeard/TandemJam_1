@@ -28,11 +28,6 @@ public class FlashlightController : MonoBehaviour
         FlashlightOnTimerTick();
     }
 
-    private void LateUpdate()
-    {
-        //AimFlashlight();
-    }
-
     private void HandleInput()
     {
         if (Input.GetKeyDown(KeyCode.T) && isFlickering == false)
@@ -98,17 +93,6 @@ public class FlashlightController : MonoBehaviour
 
     private float GetRandomLightOnTimerTime()
     {
-        return Random.Range(7.5f, 15.75f);
-    }
-
-    private void AimFlashlight()
-    {
-        RaycastHit hit;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            flashLightObject.transform.LookAt(hit.point);
-        }
+        return Random.Range(25.0f, 40.0f);
     }
 }

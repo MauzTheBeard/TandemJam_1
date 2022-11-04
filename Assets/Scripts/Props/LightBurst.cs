@@ -38,7 +38,11 @@ public class LightBurst : MonoBehaviour
 
     private IEnumerator ScaryPropDoneDelay()
     {
-        yield return new WaitForSeconds(0.5f);
-        PlayerProgress.Instance.IncrementEncounter();
+        if (PlayerProgress.Instance.LightHasBursted == false)
+        {
+            yield return new WaitForSeconds(0.5f);
+            PlayerProgress.Instance.LightHasBursted = true;
+            PlayerProgress.Instance.IncrementEncounter();
+        }        
     }
 }
