@@ -45,18 +45,18 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 0.96476066, b: 0.76792455, a: 1}
-  m_Intensity: 4.71
+  m_Intensity: 6
   m_Range: 5.3565335
   m_SpotAngle: 179
-  m_InnerSpotAngle: 175.09608
+  m_InnerSpotAngle: 78.34477
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
     m_Bias: 0.05
-    m_NormalBias: 0.4
+    m_NormalBias: 0
     m_NearPlane: 0.2
     m_CullingMatrixOverride:
       e00: 1

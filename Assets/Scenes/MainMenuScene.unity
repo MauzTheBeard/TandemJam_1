@@ -375,8 +375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 575.8334, y: 114.31117}
-  m_SizeDelta: {x: 633.1957, y: 228.6224}
+  m_AnchoredPosition: {x: 575.8334, y: 98.100945}
+  m_SizeDelta: {x: 633.1957, y: 196.2019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &318777554
 MonoBehaviour:
@@ -1073,8 +1073,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -555.24756, y: 114.31117}
-  m_SizeDelta: {x: 659.861, y: 228.6224}
+  m_AnchoredPosition: {x: -555.24756, y: 98.100945}
+  m_SizeDelta: {x: 659.861, y: 196.2019}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916638464
 MonoBehaviour:
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Start
+  m_text: Start Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0056371f0a23434fb19863669a1efad, type: 2}
   m_sharedMaterial: {fileID: 2440325524894578200, guid: f0056371f0a23434fb19863669a1efad,
@@ -1318,8 +1318,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1540,8 +1540,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -5.5374, y: 178.16995}
-  m_SizeDelta: {x: 1918.6648, y: 356.3398}
+  m_AnchoredPosition: {x: -5.5374, y: 150.38098}
+  m_SizeDelta: {x: 1918.6648, y: 300.7619}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1781913671
 MonoBehaviour:
@@ -1849,7 +1849,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000030517578, y: -188.3}
+  m_AnchoredPosition: {x: -0.000030517578, y: -193}
   m_SizeDelta: {x: 1662.7119, y: 112.6721}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1874742616
@@ -1874,7 +1874,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: You have to find all of the six scary encounters to end the game. To open
     doors press E or left mouse button, use space key to pause the game (or to adjust
-    mouse sensivity).
+    mouse sensivity). To toggle the flahlight, use T.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0056371f0a23434fb19863669a1efad, type: 2}
   m_sharedMaterial: {fileID: 2440325524894578200, guid: f0056371f0a23434fb19863669a1efad,
@@ -1938,7 +1938,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: -138.53857}
+  m_margin: {x: -63.691463, y: 0, z: -63.69159, w: -71.381966}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2054,9 +2054,9 @@ RectTransform:
   m_Father: {fileID: 250755587}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000015258789, y: -81}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -0.000015258789, y: -494}
   m_SizeDelta: {x: 542.131, y: 77.8288}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1943828510
@@ -2128,14 +2128,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3773585, g: 0.012103926, b: 0.012103926, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

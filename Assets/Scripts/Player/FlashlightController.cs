@@ -28,9 +28,9 @@ public class FlashlightController : MonoBehaviour
         FlashlightOnTimerTick();
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-        AimFlashlight();
+        //AimFlashlight();
     }
 
     private void HandleInput()
