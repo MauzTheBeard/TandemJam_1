@@ -135,6 +135,18 @@ MonoBehaviour:
     Pitch: 1
     Loop: 0
     Source: {fileID: 0}
+  - Name: FlipRockingchair
+    Clip: {fileID: 8300000, guid: b00ea662badb2794197dd5429e204dfd, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
+  - Name: RockingchairWhispers
+    Clip: {fileID: 8300000, guid: 88c03b370fcce1848a8bf38d12e35dfc, type: 3}
+    Volume: 1
+    Pitch: 1
+    Loop: 0
+    Source: {fileID: 0}
   FootStepSounds:
   - Name: Step01
     Clip: {fileID: 8300000, guid: 1f0199a4c6005ec4abbb302f71bc036d, type: 3}
