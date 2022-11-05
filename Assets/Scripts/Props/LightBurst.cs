@@ -5,7 +5,9 @@ using UnityEngine;
 public class LightBurst : MonoBehaviour
 {
     [SerializeField]
-    private Light lightSource = null;
+    private Light lightSourceInner = null;
+    [SerializeField]
+    private Light lightSourceOuter = null;
 
     private GameObject player = null;
     private bool hasBursted = false;
@@ -30,7 +32,8 @@ public class LightBurst : MonoBehaviour
     {
         AudioManager.Instance.PlayEventSound("LightBurst");
         AudioManager.Instance.PlayEventSound("GlassBreak", 0.175f);
-        lightSource.enabled = false;
+        lightSourceInner.enabled = false;
+        lightSourceOuter.enabled = false;
         hasBursted = true;
 
         StartCoroutine(ScaryPropDoneDelay());

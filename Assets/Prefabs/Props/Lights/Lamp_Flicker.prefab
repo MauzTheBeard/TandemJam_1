@@ -25,12 +25,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7593510742849963686}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: -0.7071068}
-  m_LocalPosition: {x: 0, y: -0.703, z: -0}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0, y: -0.70300007, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7931900296414757799}
+  m_Father: {fileID: 7609249618531121613}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!108 &7154121105415957380
@@ -145,7 +145,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7609249618531121613}
-  - {fileID: 1457124342398889445}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -161,7 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c76ab84466031eb4ab2136168cefd315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentLight: {fileID: 7868125410816420800}
+  lightSourceInner: {fileID: 7154121105415957380}
+  lightSourceOuter: {fileID: 7868125410816420800}
   baseInterval: 0.4
 --- !u!1001 &724468231875115057
 PrefabInstance:

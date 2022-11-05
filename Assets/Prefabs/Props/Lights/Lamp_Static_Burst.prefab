@@ -160,7 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2d44ea664864a745aa9092b9af91e48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lightSource: {fileID: 5837171816175272596}
+  lightSourceInner: {fileID: 1779845748659286766}
+  lightSourceOuter: {fileID: 5837171816175272596}
 --- !u!1001 &665560279069767588
 PrefabInstance:
   m_ObjectHideFlags: 0

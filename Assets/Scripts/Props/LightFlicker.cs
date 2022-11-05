@@ -5,7 +5,9 @@ using UnityEngine;
 public class LightFlicker : MonoBehaviour
 {
     [SerializeField]
-    private Light currentLight;
+    private Light lightSourceInner;
+    [SerializeField]
+    private Light lightSourceOuter;
 
     [SerializeField]
     private float baseInterval = 0.4f;
@@ -34,7 +36,8 @@ public class LightFlicker : MonoBehaviour
             timerElapsed = 0.0f;
             timerInterval = Random.Range((baseInterval * 0.5f), (baseInterval * 1.5f));
 
-            currentLight.enabled = !currentLight.enabled;
+            lightSourceInner.enabled = !lightSourceInner.enabled;
+            lightSourceOuter.enabled = !lightSourceOuter.enabled;
         }
     }
 }
